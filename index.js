@@ -69,6 +69,8 @@ const server = http.createServer((request, response) => {
     };
     let back_card = back_card_template.render(data);
     response.end(back_card);
+  } else {
+    response.end();
   }
 })
 
