@@ -1,7 +1,7 @@
 const http = require('http');
 const Hogan = require('hogan.js');
 const hostname = '127.0.0.1';
-const port = '8080';
+const port = process.env.PORT || '8080';
 
 let front_card_template = Hogan.compile('<html><head><meta charset="utf-8"></head><body><p>{{kanji}}</p><button onclick="location.href=`./back/{{kanji}}`;">Flip</button></body></html>');
 let back_card_template = Hogan.compile('<html><head><meta charset="utf-8"></head><body>{{#meaning.length}}{{#meaning}}<p>{{.}}</p>{{/meaning}}{{/meaning.length}}{{^meaning.length}}<p>{{meaning}}</p>{{/meaning.length}}<button onclick="location.href=`./../front`;">Next Card</button></body></html>');
