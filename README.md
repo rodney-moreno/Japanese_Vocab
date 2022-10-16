@@ -1,4 +1,4 @@
-# Kanji Flashcard App README
+# Learn-Kanji
 This is a web app built using pure nodejs to practice Kanji required for the JLPT!
 
 **JLPT**, is a standardized  [criterion-referenced test](https://en.wikipedia.org/wiki/Criterion-referenced_test)  to evaluate and certify  [Japanese language](https://en.wikipedia.org/wiki/Japanese_language)  proficiency for non-native speakers, covering language knowledge, reading ability, and listening ability.
