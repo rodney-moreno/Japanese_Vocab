@@ -1,5 +1,5 @@
 {
-  "name": "Learn Kanji",
+  "name": "Learn-Kanji",
   "version": "1.0.0",
   "description": "A flashcard app to help you learn kanji required for the JLPT.",
   "main": "index.js",
