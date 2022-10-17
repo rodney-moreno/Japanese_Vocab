@@ -1,9 +1,9 @@
 const http = require('http');
 const Hogan = require('hogan.js');
-const hostname = '127.0.0.1';
+const hostname = 'localhost';
 const port = process.env.PORT || '8080';
 
-let front_card_template = Hogan.compile('<html><head><meta charset="utf-8"></head><body><p>{{kanji}}</p><button onclick="location.href=`./back/{{kanji}}`;">Flip</button></body></html>');
+let front_card_template = Hogan.compile('<html><head><meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0><style>body{margin-top: 100px; background-color: #ADD8e6;}#button{text-align: center; max-width: 500px; height: 250px; margin-left: auto; margin-right: auto; margin-top: 20px;}#cardDiv{max-width: 500px; height: 250px; margin-left: auto; margin-right: auto; display: flex; border: 8px solid #021691; justify-content: center; align-items: center; border-radius: 25px; font-family:"ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro",Osaka, "メイリオ", Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif; font-size: 50px;}p{color: #021691;}#flip{background-color: #021691; color:#ADD8e6; font-size: 30px; padding: 15px 32px; text-align: center; border: none; border-radius: 12px;}</style></head><body><p>{{kanji}}</p><button onclick="location.href=`./back/{{kanji}}`;">Flip</button></body></html>');
 let back_card_template = Hogan.compile('<html><head><meta charset="utf-8"></head><body>{{#meaning.length}}{{#meaning}}<p>{{.}}</p>{{/meaning}}{{/meaning.length}}{{^meaning.length}}<p>{{meaning}}</p>{{/meaning.length}}<button onclick="location.href=`./../front`;">Next Card</button></body></html>');
 
 const server = http.createServer((request, response) => {
@@ -17,7 +17,7 @@ const server = http.createServer((request, response) => {
   
   // Call end on the response
   if(url === "./front") {
-
+    console.log("Front")
     function getAllKanji(res) {
       let charKanji = '';
       let rawData = '';
